@@ -1,0 +1,248 @@
+.example {
+  background-color: $example-gray;
+  overflow: hidden;
+
+  @include tablet {
+    background-color: transparent;
+    border-top: 1px solid $extra-gray;
+  }
+
+  @include desktop {
+    border-top: none;
+    background-image:
+      linear-gradient(to bottom, $white 195px, transparent 195px),
+      linear-gradient(to right, $gray 60%, $example-gray 40%);
+    background-repeat: no-repeat;
+    background-position: bottom, top;
+    background-size: 100%;
+  }
+}
+
+.example__wrapper {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 0 110px;
+    max-width: 1440px;
+
+    .container {
+      min-width: 0;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.example__container {
+  padding-top: 27px; // отступ от заголовка
+
+  @include tablet {
+    padding-top: 43px;
+  }
+
+  @include desktop {
+    padding-top: 0;
+    width: 720px;
+  }
+}
+
+.example__title {
+  @include caption;
+  font-size: 36px;
+  line-height: 40px;
+  margin-bottom: 33px;
+
+  @include tablet {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 64px;
+  }
+
+  @include desktop {
+    padding-top: 60px;
+    margin-bottom: 86px;
+  }
+}
+
+.example__text {
+  margin: 0;
+  margin-bottom: 25px;
+  font-family: $arial;
+
+  br {
+    display: none;
+  }
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 53px;
+    min-width: 700px;
+
+    br {
+      display: block;
+    }
+  }
+
+  @include desktop {
+    padding-top: 60px;
+    min-width: 0;
+    width: 435px;
+    margin: 0;
+    margin-bottom: 69px;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+.example__statistics {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  @include desktop {
+    flex-direction: column;
+    width: 366px;
+    margin-bottom: 0;
+  }
+}
+
+.example__progress-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.example__progress {
+  position: relative;
+  width: 124px;
+  height: 56px;
+  border-radius: 3px;
+  border: 1px solid $light-gray;
+  box-sizing: border-box;
+  margin-bottom: 34px;
+
+  @include tablet {
+    min-width: 162px;
+    height: 72px;
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-right: 42px;
+    }
+  }
+
+  @include desktop {
+    margin-bottom: 47px;
+  }
+}
+
+.example__progress-result {
+  position: absolute;
+  top: 14px;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $black;
+
+  @include tablet {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
+
+.example__progress-result--block-1 {
+  left: 42px;
+
+  @include tablet {
+    left: 56px;
+  }
+}
+
+.example__progress-result--block-2 {
+  left: 20px;
+
+  @include tablet {
+    left: 29px;
+  }
+}
+
+.example__progress-text {
+  position: absolute;
+  left: 19px;
+  top: 47px;
+  width: 80px;
+  padding-right: 6px;
+  padding-left: 7px;
+  font-family: $arial;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  text-transform: lowercase;
+  background-color: $example-gray;
+
+  @include tablet {
+    left: 9px;
+    top: 63px;
+    width: 140px;
+    font-size: 14px;
+    line-height: 14px;
+    background-color: $white;
+
+    &--block-1 {
+      left: 24px;
+      width: 110px;
+    }
+  }
+
+  @include desktop {
+    background-color: $gray;
+  }
+}
+
+.example__price-text {
+  margin: 0;
+  margin-bottom: 42px;
+  line-height: 20px;
+
+  text-align: center;
+  text-transform: uppercase;
+  color: $black;
+
+  @include tablet {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    width: 180px;
+    padding-top: 8px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  @include desktop {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    width: 330px;
+    padding-right: 3px;
+
+    .example__price-value {
+      padding-left: 63px;
+    }
+  }
+}
+
+.example__slider {
+  padding-bottom: 32px; // отступ до конца фона в блоке example
+
+  @include tablet {
+    padding-bottom: 70px;
+  }
+
+  @include desktop {
+    width: 720px;
+  }
+}

@@ -1,0 +1,262 @@
+.program__container {
+  margin-bottom: 27px; // отступ между блоком program и блоком advantages
+
+  @include tablet {
+    margin-bottom: 48px;
+  }
+
+  @include desktop {
+    margin-bottom: 40px;
+  }
+}
+
+.program__list {
+  @include reset-list;
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.program__item {
+  position: relative;
+  background-color: $gray;
+  padding-top: 30px; // отступ для заголовков
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px; // отступ между элементами
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    width: 50px;
+    height: 50px;
+    background-color: $green;
+    border-radius: 50%;
+  }
+
+  &::after {
+    background-repeat: no-repeat;
+  }
+}
+
+@include tablet {
+  .program__item {
+    margin-bottom: 30px;
+    padding: 78px 27px 41px 52px;
+
+    &::before {
+      width: 200px;
+      height: 200px;
+      left: auto;
+    }
+  }
+}
+
+@include desktop {
+  .program__item {
+    width: 570px;
+    padding: 77px 51px 45px 52px;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+
+    &::before {
+      left: auto;
+
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.program__item--slim {
+  &::before {
+    top: 24px;
+    left: 22px;
+  }
+
+  &::after {
+    top: 22px;
+    left: 29px;
+    width: 36px;
+    height: 49px;
+    background: url("../img/svg/program-slim-cat.svg") no-repeat center;
+  }
+
+  @include tablet {
+    padding-right: 280px;
+
+    &::before {
+      top: 92px;
+      right: 62px;
+      left: auto;
+    }
+
+    &::after {
+      top: 81px;
+      right: 93px;
+      left: auto;
+      width: 138px;
+      height: 192px;
+    }
+  }
+
+  @include desktop {
+    padding-right: 41px;
+
+    &::before {
+      top: 48px;
+      left: 52px;
+      right: auto;
+    }
+
+    &::after {
+      top: 40px;
+      left: 67px;
+      right: auto;
+      width: 70px;
+      height: 97px;
+    }
+  }
+}
+
+.program__item--pro {
+  &::before {
+    top: 24px;
+    left: 22px;
+  }
+
+  &::after {
+    top: 35px;
+    left: 13px;
+    width: 67px;
+    height: 28px;
+    background: url("../img/svg/program-pro-cat.svg") no-repeat center;
+  }
+
+  @include tablet {
+    padding-right: 315px;
+
+    &::before {
+      top: 92px;
+      right: 60px;
+      left: auto;
+    }
+
+    &::after {
+      top: 137px;
+      right: 28px;
+      left: auto;
+      width: 268px;
+      height: 112px;
+    }
+  }
+
+  @include desktop {
+    padding-right: 51px;
+
+    &::before {
+      top: 47px;
+      left: 51px;
+      right: auto;
+    }
+
+    &::after {
+      top: 67px;
+      left: 33px;
+      right: auto;
+      width: 134px;
+      height: 56px;
+    }
+  }
+}
+
+.program__item-title {
+  @include caption;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
+  margin-bottom: 29px;
+  padding-left: 70px;
+
+  @include tablet {
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 24px;
+    padding-left: 0;
+  }
+
+  @include desktop {
+    margin-bottom: 74px;
+    padding-left: 161px;
+  }
+}
+
+
+.program__item-text {
+  position: relative;
+  font-family: $arial;
+  margin: 0;
+  padding-bottom: 22px;
+  border-bottom: 1px solid $medium-gray;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 0;
+    margin-bottom: 52px;
+    border-bottom: none;
+  }
+
+  @include desktop {
+    margin-bottom: 27px;
+  }
+}
+
+.program__item-button {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  line-height: 16px;
+  padding-top: 19px;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 21px;
+    right: -40px;
+    width: 24px;
+    height: 12px;
+    background-image: url("../img/svg/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+
+  @include tablet {
+    font-size: 20px;
+    padding-top: 6px;
+
+    &::before {
+      top: 8px;
+      right: -50px;
+    }
+  }
+}
+
+.program__item-button:active {
+  opacity: 0.3;
+}

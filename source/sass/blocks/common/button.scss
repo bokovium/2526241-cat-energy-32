@@ -1,0 +1,48 @@
+// Общая стилизация кнопок
+.button {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  min-width: 280px;
+  min-height: 40px;
+  font-family: inherit;
+  font-weight: $font-weight-normal;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 10px 20px;
+  color: $white;
+  background-color: $green;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $dark-green;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+  }
+}
+
+// Серая кнопка в каталоге
+.button--gray {
+  margin: 0;
+  padding: 10px 9px;
+  font-family: inherit;
+  color: $dark-gray;
+  background-color: $gray;
+
+  &:hover,
+  &:focus {
+    background-color: $ultra-gray;
+  }
+
+  &:active {
+    color: $dark-gray;
+    opacity: 0.3;
+  }
+}

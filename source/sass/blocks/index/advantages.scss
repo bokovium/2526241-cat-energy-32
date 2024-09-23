@@ -1,0 +1,194 @@
+.advantages__container {
+  margin-bottom: 42px; // отступ между блоком advantages и блоком example
+
+  @include tablet {
+    margin-bottom: 99px;
+  }
+
+  @include desktop {
+    margin-bottom: 64px;
+  }
+}
+
+.advantages__title {
+  @include caption;
+  font-size: 36px;
+  line-height: 40px;
+  margin-bottom: 38px;
+
+  @include tablet {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 183px;
+  }
+}
+
+.advantages__list {
+  @include reset-list;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+  }
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 70px;
+  }
+}
+
+.advantages__item {
+  position: relative;
+  font-family: $arial;
+  min-height: 60px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 80px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  br {
+    display: none;
+  }
+}
+
+@include tablet {
+  .advantages__item {
+    width: 76%;
+    padding-top: 0;
+    padding-left: 0;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-bottom: 242px;
+    }
+
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+
+    br {
+      display: block;
+    }
+  }
+}
+
+@include desktop {
+  .advantages__item {
+    width: 25%;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.advantages__item p {
+  margin: 0;
+
+  @include tablet {
+    min-width: 205px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include desktop {
+    min-width: 255px;
+  }
+}
+
+.advantages__item::after {
+  content: "";
+  position: absolute;
+  min-width: 60px;
+  min-height: 60px;
+  top: 0;
+  left: 0;
+  background: $green;
+}
+
+.advantages__item--icon-1::after,
+.advantages__item--icon-2::after,
+.advantages__item--icon-3::after,
+.advantages__item--icon-4::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @include tablet {
+    width: 80px;
+    height: 80px;
+    top: -112px;
+  }
+}
+
+.advantages__item--icon-1::after {
+  background-image: url("../img/svg/advantages-item-icon-1.svg");
+}
+
+.advantages__item--icon-2::after {
+
+  background-image: url("../img/svg/advantages-item-icon-2.svg");
+}
+
+.advantages__item--icon-3::after {
+  background-image: url("../img/svg/advantages-item-icon-3.svg");
+}
+
+.advantages__item--icon-4::after {
+  background-image: url("../img/svg/advantages-item-icon-4.svg");
+}
+
+@include tablet {
+  .advantages__item--icon-1::before,
+  .advantages__item--icon-2::before,
+  .advantages__item--icon-3::before,
+  .advantages__item--icon-4::before {
+    content: "";
+    position: absolute;
+    top: -112px;
+    left: 123px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+}
+
+@include tablet {
+  .advantages__item--icon-1::before {
+    min-width: 112px;
+    min-height: 280px;
+    background-image: url("../img/svg/number-one.svg");
+  }
+}
+
+@include tablet {
+  .advantages__item--icon-2::before {
+    min-width: 134px;
+    min-height: 280px;
+    background-image: url("../img/svg/number-two.svg");
+  }
+}
+
+@include tablet {
+  .advantages__item--icon-3::before {
+    min-width: 134px;
+    min-height: 280px;
+    background-image: url("../img/svg/number-three.svg");
+  }
+}
+
+@include tablet {
+  .advantages__item--icon-4::before {
+    min-width: 136px;
+    min-height: 280px;
+    background-image: url("../img/svg/number-four.svg");
+  }
+}

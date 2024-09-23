@@ -1,0 +1,230 @@
+.field-text__label {
+  flex-shrink: 0;
+  font-size: 16px;
+  margin-right: 15px;
+  color: $dark-gray;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 30px;
+    margin-right: 18px;
+  }
+}
+
+.field-text--textarea .field-text__label {
+  margin-right: 0;
+}
+
+.field-text__input {
+  width: 100%;
+  min-width: 80px;
+  margin: 0;
+  padding: 11px 15px;
+  border: 1px solid $hyper-gray;
+  font-family: inherit;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  &::placeholder {
+    color: $dark-gray;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $light-gray;
+  }
+
+  &:disabled {
+    border: 2px solid $dark-gray;
+
+    ~ .field-text__icon {
+      fill: $green;
+    }
+  }
+
+  &:active:invalid,
+  &:focus:invalid,
+  &.invalid {
+    outline: 2px solid $red;
+
+    ~ .field-text__icon {
+      fill: $red;
+    }
+  }
+}
+
+@include tablet {
+  .field-text__input {
+    font-size: 20px;
+    line-height: 30px;
+    margin-right: 37px;
+    padding: 10px 18px;
+  }
+
+  .field-text--textarea {
+    margin-right: 37px;
+  }
+}
+
+@include desktop {
+  .field-text__input,
+  .field-text--textarea {
+    margin-right: 0;
+  }
+
+  .field-text--blank-1 .field-text__input {
+    width: 506px;
+  }
+
+  .field-text--blank-2 .field-text__input {
+    width: 477px;
+  }
+
+  .field-text--blank-3 .field-text__input {
+    width: 436px;
+  }
+
+  .field-text--email .field-text__input {
+    width: 486px;
+  }
+
+  .field-text--phone .field-text__input {
+    width: 472px;
+  }
+}
+
+.field-text--textarea {
+  flex-wrap: wrap;
+
+  .field-text__input {
+    min-height: 150px;
+    padding: 5px 13px;
+    resize: vertical;
+
+    @include tablet {
+      min-height: 174px;
+      padding: 9px 18px;
+    }
+  }
+}
+
+// убирает авто-иконки в браузере Safari
+.field-text__input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+// убирает авто-иконки в браузерах
+.field-text__input::-ms-clear,
+.field-text__input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.field-text--email,
+.field-text--phone {
+  position: relative;
+
+  .field-text__label {
+    margin-right: 11px;
+  }
+}
+
+.field-text--email {
+  @include tablet {
+    .field-text__label {
+      margin-right: 19px;
+    }
+
+    .field-text__input {
+      padding: 10px 21px;
+    }
+  }
+}
+
+.field-text--phone {
+  @include tablet {
+    .field-text__label {
+      margin-right: 15px;
+    }
+
+    .field-text__input {
+      padding: 10px 18px;
+    }
+  }
+}
+
+.field-text__icon {
+  position: absolute;
+  display: block;
+  width: 20px;
+}
+
+.field-text__email {
+  height: 14px;
+  top: 20px;
+  right: 14px;
+
+  @include tablet {
+    right: 52px;
+  }
+
+  @include desktop {
+    top: 19px;
+    right: 15px;
+  }
+}
+
+.field-text__phone {
+  height: 20px;
+  top: 17px;
+  right: 13px;
+
+  @include tablet {
+    right: 53px;
+  }
+
+  @include desktop {
+    top: 15px;
+    right: 17px;
+  }
+}
+
+.field-submit__button {
+  width: 100%;
+
+  @include tablet {
+    font-size: 20px;
+    padding: 16px 45px;
+    width: 87%;
+  }
+
+  @include desktop {
+    font-size: 20px;
+    padding: 16px 45px;
+    width: 100%;
+  }
+}
+
+.field-submit__note {
+  margin: 0;
+  line-height: 16px;
+  font-family: $arial;
+  text-align: center;
+
+  @include tablet {
+    font-size: 16px;
+    text-align: left;
+    padding-top: 11px;
+  }
+
+  @include desktop {
+    padding-top: 13px;
+  }
+}

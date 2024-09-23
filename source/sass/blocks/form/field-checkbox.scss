@@ -1,0 +1,77 @@
+.field-checkbox__label {
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+  min-height: 30px;
+  padding-left: 46px;
+  margin: 0;
+  text-transform: uppercase;
+  color: $black;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    bottom: -3px;
+    left: 1px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $light-gray;
+
+    @include tablet {
+      bottom: -5px;
+      left: 1px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &::after {
+    top: 3px;
+    left: 8px;
+    width: 21px;
+    height: 16px;
+    background-image: url("../img/svg/icon-checkmark.svg");
+    background-repeat: no-repeat;
+    opacity: 0;
+
+    @include tablet {
+      top: 8px;
+      left: 12px;
+    }
+  }
+}
+
+@include tablet {
+  .field-checkbox__label {
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 60px;
+    margin-bottom: 0;
+  }
+}
+
+.field-checkbox__input:checked ~ .field-checkbox__label {
+  &::after {
+    opacity: 1;
+  }
+}
+
+.field-checkbox__input:hover ~ .field-checkbox__label,
+.field-checkbox__input:focus ~ .field-checkbox__label {
+  &::before {
+    border-color: $nano-gray;
+  }
+}
+
+.field-checkbox__input:disabled + .field-checkbox__label {
+  opacity: 0.3;
+}
+
+.field-checkbox__input:disabled + .field-checkbox__label::before {
+  border-color: $nano-gray;
+}

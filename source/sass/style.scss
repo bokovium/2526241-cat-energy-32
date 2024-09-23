@@ -1,0 +1,37 @@
+// Шрифты
+@import "global/fonts.scss";
+
+// Переменные
+@import "global/variables.scss";
+
+// Базовые параметры страницы
+@import "global/scaffolding.scss";
+
+// Миксины (примеси)
+@import "global/mixins.scss";
+
+// Общие блоки
+@import "blocks/common/button.scss";
+@import "blocks/common/page-header.scss";
+@import "blocks/common/main-nav.scss";
+@import "blocks/common/page-footer.scss";
+@import "blocks/common/contacts.scss";
+@import "blocks/common/social.scss";
+
+// Главная страница
+@import "blocks/index/promo.scss";
+@import "blocks/index/program.scss";
+@import "blocks/index/advantages.scss";
+@import "blocks/index/example.scss";
+@import "blocks/index/slider.scss";
+
+// Страница каталога
+@import "blocks/catalog/catalog.scss";
+@import "blocks/catalog/product.scss";
+@import "blocks/catalog/extra.scss";
+
+// Страница формы
+@import "blocks/form/form.scss";
+@import "blocks/form/field-text.scss";
+@import "blocks/form/field-radio.scss";
+@import "blocks/form/field-checkbox.scss";

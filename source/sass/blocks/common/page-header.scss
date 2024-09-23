@@ -1,0 +1,93 @@
+$gradient: linear-gradient(rgba(104, 183, 56, 0.85) 50%, rgba(104, 183, 56, 0.85) 50%);
+
+@include desktop {
+  .page-header--index {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 50%;
+      z-index: -1;
+      height: 694px;
+      background-image:
+        $gradient,
+        url("../img/raster/index-background-desktop-cat@1x.jpg");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: cover;
+
+      @include retina() {
+        background-image:
+          $gradient,
+          url("../img/raster/index-background-desktop-cat@2x.jpg");
+      }
+    }
+  }
+}
+
+.page-header__container {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 19px; // отступ от блока page-header наверх
+    padding-bottom: 20px;
+  }
+
+  @include desktop {
+    padding-top: 52px;
+  }
+}
+
+.page-header__logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  box-sizing: content-box;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @include tablet {
+    padding-bottom: 10px;
+  }
+}
+
+.page-header__logo-title {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  bottom: 0;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.page-header__logo img {
+  width: 33px;
+  height: 38px;
+
+  @include tablet {
+    width: 173px;
+    height: 58px;
+  }
+
+  @include desktop {
+    width: 202px;
+    height: 60px;
+  }
+}

@@ -1,0 +1,410 @@
+.form {
+  position: relative;
+  border-top: 1px solid $medium-gray;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid $medium-gray;
+  }
+
+  &::before {
+    top: 361px;
+  }
+
+  &::after {
+    top: 518px;
+  }
+
+  @include tablet {
+    border: none;
+
+    .container {
+      padding-left: 70px;
+    }
+
+    &::before,
+    &::after {
+      border: none;
+    }
+  }
+
+  @include desktop {
+    .container {
+      padding-left: 110px;
+    }
+  }
+}
+
+.form__container {
+  padding-top: 27px; // Отступ для заголовка
+  margin-bottom: 37px; // Отступ от блока form до блока form__module--info
+
+  @include tablet {
+    padding-top: 37px;
+    margin-bottom: 66px;
+  }
+
+  @include desktop {
+    padding-top: 50px;
+  }
+}
+
+.form__title {
+  @include caption;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 37px;
+
+  @include tablet {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 54px;
+  }
+
+  @include desktop {
+    margin-bottom: 56px;
+  }
+}
+
+.form__text {
+  margin: 0;
+  text-transform: uppercase;
+  color: $black;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+@include desktop {
+  .form__flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 70px;
+  }
+}
+
+.form__module {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.form__module--info .form__field,
+.form__module--adress .form__field,
+.form__module--comment .form__field {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 11px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
+}
+
+.form__module--info {
+  position: relative;
+  margin-bottom: 52px;
+
+  @include tablet {
+    margin-bottom: 72px; // отступ блока form__module--info до блока form__module--program
+  }
+
+  @include desktop {
+    margin-bottom: 0; // отступ блока form__module--info до блока form__module--program
+  }
+}
+
+@include tablet {
+  .form__module--info,
+  .form__module--program {
+    border: none;
+  }
+}
+
+.form__module--program {
+  margin-bottom: 51px;
+
+  @include tablet {
+    margin-bottom: 75px; // отступ блока form__module--program до блока form__module--address
+  }
+
+  @include desktop {
+    margin-bottom: 0; // отступ блока form__module--program до блока form__module--address
+  }
+}
+
+.form__module-program-wrapper {
+  @include tablet {
+    border: 1px solid $hyper-gray;
+    margin-right: 37px;
+    padding: 29px 8px;
+  }
+
+  @include desktop {
+    margin-right: 0;
+    width: 570px;
+  }
+}
+
+.form__module--program .form__field {
+  margin: 0;
+  margin-bottom: 23px; // расстояние между радиокнопками
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.form__module--adress {
+  position: relative;
+  margin-bottom: 24px; // отступ блока form__module--address до  блока form__module--comment
+
+  &::after {
+    @include green-border;
+    top: 16px;
+
+    @include tablet {
+      top: 22px;
+    }
+  }
+}
+
+@include tablet {
+  .form__module--adress {
+    margin-bottom: 65px; // отступ блока form__module--address до блока form__module--comment
+  }
+}
+
+.form__module--adress span {
+  position: relative;
+
+  &::before {
+    @include white-background;
+    width: 221px;
+
+    @include tablet {
+      width: 593px;
+      left: -40px;
+    }
+  }
+}
+
+.form__module--adress .form__legend {
+  margin-bottom: 31px; // отступ от заголовка
+}
+
+@include tablet {
+  .form__module--adress .form__legend {
+    margin-bottom: 76px; // отступ от заголовка
+
+    br {
+      display: none;
+    }
+  }
+}
+
+.form__module-adress-wrapper {
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@include desktop {
+  .form__module--adress .form__field {
+    margin-bottom: 0; // убирает отступ снизу у поля e-mail
+  }
+}
+
+.form__module--comment {
+  position: relative;
+  margin-bottom: 8px; // отступ блока form__module--comment до блока form__module--extra
+
+  &::after {
+    @include green-border;
+    top: 14px;
+
+    @include tablet {
+      top: 22px;
+    }
+  }
+}
+
+@include tablet {
+  .form__module--comment {
+    margin-bottom: 45px; // отступ блока form__module--comment до блока form__module--extra
+  }
+}
+
+@include desktop {
+  .form__module--comment {
+    margin-bottom: 48px; // отступ блока form__module--comment до блока form__module--extra
+  }
+}
+
+.form__module--comment span {
+  position: relative;
+
+  &::before {
+    @include white-background;
+    width: 161px;
+
+    @include tablet {
+      width: 259px;
+      left: -40px;
+    }
+  }
+}
+
+.form__module--comment .form__legend {
+  margin-bottom: 38px; // отступ от заголовка
+}
+
+@include tablet {
+  .form__module--comment .form__legend {
+    margin-bottom: 76px; // отступ от заголовка
+  }
+}
+
+.form__module--extra {
+  position: relative;
+  margin-bottom: 41px; // отступ блока form__module--comment до блока field-submit
+
+  &::after {
+    @include green-border;
+    top: 14px;
+
+    @include tablet {
+      top: 22px;
+    }
+  }
+}
+
+@include tablet {
+  .form__module--extra {
+    margin-bottom: 59px; // отступ блока form__module--comment до блока field-submit
+  }
+}
+
+@include desktop {
+  .form__module--extra {
+    margin-bottom: 24px; // отступ блока form__module--comment до блока field-submit
+  }
+}
+
+.form__module--extra span {
+  position: relative;
+
+  &::before {
+    @include white-background;
+    width: 184px;
+
+    @include tablet {
+      width: 292px;
+      left: -40px;
+    }
+  }
+}
+
+.form__module--extra .form__field {
+  margin: 0;
+  margin-bottom: 23px; // расстояние между чекбокс-кнопками
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    margin-bottom: 0;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-bottom: 42px;
+    }
+
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__module--extra .form__legend {
+  margin-bottom: 38px;
+}
+
+@include tablet {
+  .form__module--extra .form__legend {
+    margin-bottom: 62px;
+  }
+}
+
+.form__module-extra-wrapper {
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      column-gap: 78px;
+    }
+  }
+}
+
+.form__legend {
+  @include caption;
+  font-size: 24px;
+  line-height: 26px;
+
+  @include tablet {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+.form__submit {
+  margin-bottom: 31px;
+
+  @include tablet {
+    margin-bottom: 72px;
+  }
+
+  @include desktop {
+    margin-bottom: 82px;
+  }
+}
+
+.form__submit-container {
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  @include desktop {
+    column-gap: 83px;
+  }
+}
+
+.form__button {
+  margin-bottom: 17px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,109 @@
+.page-footer {
+  background-color: $gray;
+}
+
+.page-footer__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-top: 40px; // отступ секции page-footer__links от секции page-footer__map
+  padding-bottom: 22px; // отступ секции page-footer__links с сохранением фона
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 60px;
+    padding-bottom: 53px;
+  }
+
+  @include desktop {
+    padding-top: 63px;
+    padding-bottom: 58px;
+  }
+}
+
+.page-footer__logo {
+  padding-bottom: 28px;
+  cursor: pointer;
+
+  @include tablet {
+    padding: 0;
+  }
+}
+
+.page-footer__logo-title:hover,
+.page-footer__logo-title:focus {
+  opacity: 0.8;
+}
+
+.page-footer__logo-title:active {
+  opacity: 0.6;
+}
+
+.page-footer__social {
+  padding-top: 20px;
+  padding-bottom: 15px;
+
+  @include tablet {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 38px;
+  }
+}
+
+.page-footer__copyright {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-family: $arial;
+  color: $dark-gray;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    .page-footer__copyright-icon {
+      fill: $green;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @include tablet {
+    width: 173px;
+    padding: 0;
+  }
+}
+
+.page-footer__copyright-name {
+  padding-top: 29px;
+  text-transform: none;
+
+  @include tablet {
+    padding: 0;
+    padding-left: 9px;
+  }
+
+  @include tablet {
+    padding-top: 3px;
+    padding-left: 10px;
+  }
+}
+
+.page-footer__copyright-icon {
+  position: absolute;
+  top: 18px;
+  right: -8px;
+  fill: $over-gray;
+  width: 43px;
+  height: 42px;
+
+  @include tablet {
+    top: -9px;
+  }
+}

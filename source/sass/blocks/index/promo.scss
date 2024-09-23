@@ -1,0 +1,132 @@
+$gradient: linear-gradient(to top, $white 178px, rgba(104, 183, 56, 0.85) 178px);
+
+.promo {
+  background-size: 100%;
+  background-image:
+    $gradient,
+    url("../img/raster/index-background-mobile-cat@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: rgba(104, 183, 56, 0.85);
+
+  @include retina() {
+    background-image:
+      $gradient,
+      url("../img/raster/index-background-mobile-cat@2x.jpg");
+  }
+
+  @include tablet {
+    position: relative; // для promo__image
+    background: none;
+  }
+}
+
+.promo__container {
+  padding-top: 28px; // отступ от заголовка promo__title в блоке promo
+  margin-bottom: 22px; // отступ между блоком promo и блоком program
+
+  @include tablet {
+    padding-top: 36px; // отступ от заголовка promo__title в блоке promo
+    padding-left: 112px;
+    margin-bottom: 526px; // отступ между блоком promo и блоком program
+  }
+
+  @include desktop {
+    padding-top: 86px;
+    padding-left: 190px;
+    margin-bottom: 267px;
+  }
+}
+
+
+.promo__title {
+  @include caption;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  font-weight: $font-weight-normal;
+  font-size: 36px;
+  line-height: 36px;
+  width: 250px;
+  text-align: center;
+  color: $white;
+
+  @include tablet {
+    position: relative;
+    font-size: 60px;
+    line-height: 60px;
+    margin: 0;
+    margin-bottom: 41px;
+    margin-left: 5px;
+    width: 420px;
+    z-index: 2;
+    color: $black;
+    text-align: left;
+  }
+
+  @include desktop {
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.promo__text {
+  margin: 0 auto;
+  margin-bottom: 28px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0;
+    margin-bottom: 49px;
+    margin-left: 5px;
+    z-index: 2;
+    color: $black;
+    text-align: left;
+  }
+
+  @include desktop {
+    margin-left: 0;
+    margin-bottom: 52px;
+  }
+}
+
+.promo__image {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 4px;
+
+  @include tablet {
+    position: absolute;
+    top: 237px;
+    left: -1px;
+    right: 0;
+    margin-bottom: 0;
+    z-index: -1;
+  }
+
+  @include desktop {
+    top: 4px;
+    right: -229px;
+  }
+}
+
+.promo__button {
+  margin: 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 18px;
+
+  @include tablet {
+    position: relative;
+    font-size: 20px;
+    height: 54px;
+    padding: 19px 5px;
+    min-width: 244px;
+    width: 244px;
+    z-index: 2;
+  }
+}

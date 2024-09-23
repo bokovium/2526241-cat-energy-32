@@ -1,0 +1,274 @@
+.product {
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    padding: 0 37px 39px 38px;
+    background-image: linear-gradient(to bottom, transparent 133px, $gray 133px);
+  }
+
+  @include desktop {
+    padding-bottom: 40px;
+  }
+}
+
+.product__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  outline: none;
+
+  @include tablet {
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  &--item-1 {
+    padding-top: 7px;
+
+    @include tablet {
+      padding-top: 88px;
+      margin-bottom: 33px;
+    }
+
+    @include desktop {
+      padding-top: 80px;
+      margin-bottom: 44px;
+    }
+  }
+
+  &--item-2 {
+    padding-top: 16px;
+
+    @include tablet {
+      padding-top: 60px;
+      margin-bottom: 27px;
+    }
+
+    @include desktop {
+      padding-top: 53px;
+      margin-bottom: 44px;
+    }
+  }
+
+  &--item-3 {
+    padding-top: 26px;
+
+    @include tablet {
+      padding-top: 86px;
+      margin-bottom: 34px;
+    }
+
+    @include desktop {
+      padding-top: 79px;
+      margin-bottom: 42px;
+    }
+  }
+
+  &--item-4 {
+    padding-top: 17px;
+
+    @include tablet {
+      padding-top: 60px;
+      margin-bottom: 34px;
+    }
+
+    @include desktop {
+      padding-top: 54px;
+      margin-bottom: 49px;
+    }
+  }
+
+  &--item-5 {
+    padding-top: 32px;
+
+    @include tablet {
+      padding-top: 91px;
+      margin-bottom: 32px;
+    }
+
+    @include desktop {
+      padding-top: 82px;
+      margin-bottom: 42px;
+    }
+  }
+
+  &--item-6 {
+    padding-top: 18px;
+
+    @include tablet {
+      padding-top: 62px;
+      margin-bottom: 33px;
+    }
+
+    @include desktop {
+      padding-top: 53px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &--item-7 {
+    padding-top: 26px;
+
+    @include tablet {
+      padding-top: 89px;
+      margin-bottom: 29px;
+    }
+
+    @include desktop {
+      padding-top: 79px;
+      margin-bottom: 43px;
+    }
+  }
+}
+
+.product__image {
+  display: block;
+}
+
+.product__title {
+  @include caption;
+  font-family: $oswald;
+  font-size: 16px;
+  line-height: 20px;
+  width: 57%;
+  margin-bottom: 14px;
+  color: $special-gray;
+
+  br {
+    display: none;
+  }
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 24px;
+    width: 195px;
+    margin: 0 auto 14px;
+    text-align: center;
+
+    br {
+      display: block;
+    }
+  }
+
+  @include desktop {
+    line-height: 21px;
+    margin-left: -12px;
+    margin-bottom: 16px;
+  }
+}
+
+.product__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin: 0;
+  font-family: $arial;
+  font-size: 12px;
+  line-height: 16px;
+
+  dd {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+  }
+}
+
+@include tablet {
+  .product__info {
+    margin-bottom: 33px;
+    font-size: 16px;
+
+    dd,
+    dt {
+      border-bottom: 1px solid $light-gray;
+      padding-top: 8px;
+      padding-bottom: 7px;
+    }
+  }
+}
+
+.product__button {
+  width: 100%;
+
+  @include tablet {
+    min-width: 100%;
+  }
+}
+
+.product--add {
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    min-width: 30px;
+    min-height: 30px;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(0);
+    background-image: url("../img/svg/plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@include tablet {
+  .product--add {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 133px;
+    padding: 162px 37px 34px 37px;
+    border: 2px solid $gray;
+    background-color: transparent;
+    background-image: none;
+
+    &::before {
+      top: 53px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+@include desktop {
+  .product--add {
+    padding: 160px 37px 34px 34px;
+
+    &::before {
+      top: 51px;
+    }
+  }
+}
+
+.product__description {
+  @include caption;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  color: $dark-black;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 22px;
+    margin: 0 auto 24px;
+    width: 150px;
+  }
+}
+
+.product__text {
+  font-family: $arial;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+  margin-bottom: 21px;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0 auto 86px;
+    width: 170px;
+  }
+}
